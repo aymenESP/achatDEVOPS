@@ -17,6 +17,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 //test comment
+//test comment 2
 
 @Entity
 @Getter
