@@ -1,6 +1,4 @@
 pipeline {
-    environment {
-    }
     agent any
     stages {
         stage('step 1 : Clone code from Git') {
