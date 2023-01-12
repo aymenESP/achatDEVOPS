@@ -8,9 +8,10 @@ pipeline {
                 url: "https://github.com/aymenESP/achatDEVOPS.git"
             }
         }
-        stage('step 2 : Compile Maven') {
+        stage('step 2 : Compile & test Maven') {
             steps {
                 sh 'mvn clean compile -DskipTests'
+                sh 'mvn test'
             }
         }
         stage('step 3 : Run SonarQube') {
