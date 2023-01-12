@@ -8,7 +8,7 @@ import tn.esprit.rh.achat.repositories.OperateurRepository;
 import static org.mockito.Mockito.when;
 @SpringBootTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-class ProduitServiceTest {
+class OperateurServiceTest {
     @Autowired
     private OperateurServiceImpl op;
     @MockBean

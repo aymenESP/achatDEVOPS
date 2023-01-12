@@ -1,4 +1,8 @@
 pipeline {
+    envi{
+            registry= "ayamenakkari/achat"
+	        registryCredential = "dockerhub"
+    }
     agent any
     stages {
         stage('step 1 : Clone code from Git') {
@@ -25,6 +29,27 @@ pipeline {
             steps {
                 sh "mvn clean package -DskipTests deploy:deploy-file -DgroupId=tn.esprit -DartifactId=achat -Dversion=1.0 -DgeneratePom=true -Dpackaging=war -DrepositoryId=deploymentRepo -Durl=http://192.168.184.130:8081/repository/maven-releases/ -Dfile=target/achat-1.0.jar"
             }
+        }
+        stage('BUILD') { 
+            steps { 
+                script { 
+                    timestamps {
+                    dockerImage = docker.build registry
+                    }
+                }
+            } 
+        }
+        stage('PUSH DOCKERHUB') { 
+            steps { 
+                script {
+                        timestamps {
+						  docker.withRegistry ('', registryCredential ) {
+							  dockerImage.push()
+                        }
+                    } 
+                }
+            } 
+            
         }
 }
 }
