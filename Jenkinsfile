@@ -1,7 +1,8 @@
 pipeline {
-    envi{
+    environment{
             registry= "ayamenakkari/achat"
 	        registryCredential = "dockerhub"
+            dockerImage = "achat"
     }
     agent any
     stages {
