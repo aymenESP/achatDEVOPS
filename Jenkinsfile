@@ -15,8 +15,10 @@ pipeline {
         }
         stage('step 3 : Run SonarQube') {
             steps {
-                sh "mvn sonar:sonar -Dsonar.projectKey=aymen -Dsonar.host.url=http://192.168.184.130:9000 -Dsonar.login=aymen"
+                sh   "mvn sonar:sonar -Dsonar.projectKey=devopsproject -Dsonar.host.url=http://192.168.184.130:9000 -Dsonar.login=661442f6ec8861168f9cd6c321aa6c2812f20489"
             }
+
+          
         }
         stage('step 4 : Deploy to Nexus') {
             steps {
