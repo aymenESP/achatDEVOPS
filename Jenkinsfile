@@ -13,7 +13,7 @@ pipeline {
                 sh 'mvn clean compile -DskipTests'
             }
         }
-       /* stage('step 3 : Run SonarQube') {
+        stage('step 3 : Run SonarQube') {
             steps {
                 sh   "mvn sonar:sonar -Dsonar.projectKey=devopsproject -Dsonar.host.url=http://192.168.1.182:9000 -Dsonar.login=661442f6ec8861168f9cd6c321aa6c2812f20489"
             }
@@ -24,6 +24,6 @@ pipeline {
             steps {
                 sh "mvn clean package -DskipTests deploy:deploy-file -DgroupId=tn.esprit -DartifactId=achat -Dversion=1.0 -DgeneratePom=true -Dpackaging=war -DrepositoryId=deploymentRepo -Durl=http://192.168.1.182:8081/repository/maven-releases/ -Dfile=target/achat-1.0.jar"
             }
-        }*/
+        }
 }
 }
