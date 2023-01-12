@@ -7,7 +7,7 @@ pipeline {
             steps {
                 echo "GitHub clone step"
                 git branch: "aymen",
-                url: https://github.com/aymenESP/achatDEVOPS.git
+                url: "https://github.com/aymenESP/achatDEVOPS.git"
             }
         }
 }
