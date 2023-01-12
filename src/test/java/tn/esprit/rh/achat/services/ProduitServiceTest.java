@@ -16,7 +16,7 @@ public class ProduitServiceTest {
     IProduitService ps;
 
     @Test
-    @Order(1)
+    @Order(0)
     public void testRetrieveAllUsers() {
         List<Produit> listProduits = ps.retrieveAllProduits();
         Assertions.assertEquals(0, listProduits.size());
