@@ -14,7 +14,7 @@ pipeline {
             }
         } 
         //
-        
+
         /*
         stage('MVN CLEAN') {
 
@@ -28,7 +28,7 @@ pipeline {
 
         }
         */
-      /*  stage('MVN TEST (Mockito)') {
+        stage('MVN TEST (Mockito)') {
 
            steps {
 
@@ -36,7 +36,7 @@ pipeline {
 
             }
 
-        }*/
+        }
 
         stage(' SonarQube') {
             steps {
@@ -56,7 +56,7 @@ pipeline {
             }
         }
 
-     /*  stage('BUILD') { 
+       stage('BUILD') { 
             steps { 
                 script { 
                     timestamps {
@@ -65,12 +65,12 @@ pipeline {
                 }
             } 
         }
-     */
+     
 
      /// test 
 
 
-      /*   stage(' PUSH DOCKERHUB') { 
+         stage(' PUSH DOCKERHUB') { 
             steps { 
                 script {
                         timestamps {
@@ -81,7 +81,7 @@ pipeline {
                 }
             } 
             
-        } */
+        } 
 
 
             }
