@@ -47,7 +47,7 @@ pipeline {
             }
         } 
 
-        stage('BUILD') { 
+     /*  stage('BUILD') { 
             steps { 
                 script { 
                     timestamps {
@@ -55,6 +55,19 @@ pipeline {
                     }
                 }
             } 
+        }
+     */
+         stage('PUSH DOCKERHUB') { 
+            steps { 
+                script {
+                        timestamps {
+						  docker.withRegistry ('', medtouijer/devops ) {
+							  dockerImage.push()
+                        }
+                    } 
+                }
+            } 
+            
         }
 
 
