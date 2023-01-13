@@ -51,7 +51,7 @@ pipeline {
             steps { 
                 script { 
                     timestamps {
-                    dockerImage = docker.build medtouijer / devops
+                    dockerImage = docker.build medtouijer/devops
                     }
                 }
             } 
