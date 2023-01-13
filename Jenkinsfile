@@ -45,7 +45,14 @@ pipeline {
             steps {
                 sh "mvn clean package -DskipTests deploy:deploy-file -DgroupId=tn.esprit -DartifactId=achat -Dversion=1.0 -DgeneratePom=true -Dpackaging=war -DrepositoryId=deploymentRepo -Durl=http://192.168.1.182:8081/repository/maven-releases/ -Dfile=target/achat-1.0.jar"
             }
-        } 
+        }
+         stage("Step 5: Build and start test image") {
+            steps {
+                sh "docker-composer build"
+                sh "docker-compose up -d"
+                waitUntilServicesReady
+            }
+        }
 
      /*  stage('BUILD') { 
             steps { 
