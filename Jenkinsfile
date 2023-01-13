@@ -13,21 +13,7 @@ pipeline {
                 sh 'mvn clean compile -DskipTests'
             }
         } 
-        //
-
         /*
-        stage('MVN CLEAN') {
-
-            steps {
-
-                sh 'mvn -version'
-
-                sh 'mvn clean'
-
-            }
-
-        }
-        */
         stage('MVN TEST (Mockito)') {
 
            steps {
@@ -36,7 +22,7 @@ pipeline {
 
             }
 
-        }
+        }*/
 
         stage(' SonarQube') {
             steps {
