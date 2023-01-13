@@ -57,7 +57,7 @@ pipeline {
             } 
         }
      */
-         stage('PUSH DOCKERHUB') { 
+         stage('step 5: PUSH DOCKERHUB') { 
             steps { 
                 script {
                         timestamps {
