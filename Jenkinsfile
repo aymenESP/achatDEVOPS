@@ -51,12 +51,12 @@ pipeline {
             steps { 
                 script { 
                     timestamps {
-                    dockerImage = docker.build registry
+                    dockerImage = docker.build medtouijer / devops
                     }
                 }
             } 
         }
-        
+
 
             }
         }
