@@ -31,7 +31,7 @@ pipeline {
                 sh "mvn clean package -DskipTests deploy:deploy-file -DgroupId=tn.esprit -DartifactId=achat -Dversion=1.0 -DgeneratePom=true -Dpackaging=war -DrepositoryId=deploymentRepo -Durl=http://192.168.184.130:8081/repository/maven-releases/ -Dfile=target/achat-1.0.jar"
             }
         }
-        stage('BUILD') { 
+        stage('step 5 : BUILD') { 
             steps { 
                 script { 
                     timestamps {
@@ -40,7 +40,7 @@ pipeline {
                 }
             } 
         }
-        stage('PUSH DOCKERHUB') { 
+        stage('step 6 : PUSH DOCKERHUB') { 
             steps { 
                 script {
                         timestamps {
